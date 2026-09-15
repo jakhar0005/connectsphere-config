@@ -1,0 +1,2 @@
+server.port: 9070
+server.servlet.context-path: /upload

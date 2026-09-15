@@ -1,0 +1,34 @@
+server:
+    # Connection Service port
+    port: 9030
+
+spring:
+    neo4j:
+        # Neo4j is exposed from Docker to Windows on port 7688
+#        uri: neo4j://localhost:7688
+        uri: neo4j://neo4j:7687
+
+        # Neo4j username
+        authentication:
+            username: neo4j
+            password: user@1234
+
+    kafka:
+        # Kafka is running in Docker, but Connection Service runs from IntelliJ
+#        bootstrap-servers: localhost:9092
+        bootstrap-servers: kafka:9092
+
+        consumer:
+            # Use the application name as the Kafka consumer group
+            group-id: connection-service
+
+            # Kafka message key is a Long
+            key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+
+            # Kafka message value is JSON
+            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+            properties:
+                spring.json:
+                    # Allow JSON classes from our application
+                    trusted.packages: com.connectSphere.*

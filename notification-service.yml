@@ -1,0 +1,36 @@
+server:
+    # Notification Service port
+    port: 9050
+
+spring:
+    kafka:
+        # IntelliJ service → Docker Kafka
+#        bootstrap-servers: localhost:9092
+        bootstrap-servers: kafka:9092
+
+        consumer:
+            # Consumer group name
+            group-id: notification-service
+
+            # Kafka message key is Long
+            key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+
+            # Kafka message value is JSON
+            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+            properties:
+                spring.json:
+                    # Allow our application event classes
+                    trusted.packages: com.connectSphere.*
+
+    datasource:
+        # IntelliJ service → Docker PostgreSQL
+#        url: jdbc:postgresql://localhost:5433/notificationDB
+        url: jdbc:postgresql://postgres:5432/notificationDB
+        username: postgres
+        password: user
+
+    jpa:
+        # Create/update tables automatically
+        hibernate:
+            ddl-auto: update
