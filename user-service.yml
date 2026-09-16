@@ -10,7 +10,6 @@ spring:
     datasource:
         # PostgreSQL container
         url: jdbc:postgresql://postgres:5432/userDB
-#        url: jdbc:postgresql://localhost:5432/userDB
         username: postgres
         password: user
 
