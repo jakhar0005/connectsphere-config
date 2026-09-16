@@ -2,5 +2,4 @@ eureka:
     client:
         # Connect to Eureka using the Docker service name
         service-url:
-#            defaultZone: http://localhost:8761/eureka
             defaultZone: http://discover-service:8761/eureka
