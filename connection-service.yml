@@ -1,9 +1,8 @@
 server:
     # Connection Service port
     port: 9030
-
-servlet:
-    context-path: /connection
+    servlet:
+        context-path: /connection
 
 spring:
     neo4j:
