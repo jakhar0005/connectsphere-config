@@ -2,6 +2,9 @@ server:
     # Notification Service port
     port: 9050
 
+servlet:
+    context-path: /notification
+
 spring:
     kafka:
         # IntelliJ service → Docker Kafka

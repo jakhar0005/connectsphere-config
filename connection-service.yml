@@ -2,6 +2,9 @@ server:
     # Connection Service port
     port: 9030
 
+servlet:
+    context-path: /connection
+
 spring:
     neo4j:
         # Neo4j is exposed from Docker to Windows on port 7688
