@@ -7,16 +7,16 @@ server:
 spring:
     neo4j:
         # Neo4j is exposed from Docker to Windows on port 7688
-        uri: neo4j://neo4j:7687
+        uri: ${NEO4J_URI:neo4j://neo4j:7687}
 
         # Neo4j username
         authentication:
-            username: neo4j
-            password: user@1234
+        username: ${NEO4J_USERNAME:neo4j}
+        password: ${NEO4J_PASSWORD:user@1234}
 
     kafka:
         # Kafka is running in Docker, but Connection Service runs from IntelliJ
-        bootstrap-servers: kafka:9092
+        bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
 
         consumer:
             # Use the application name as the Kafka consumer group

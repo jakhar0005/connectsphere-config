@@ -9,9 +9,9 @@ server:
 spring:
     datasource:
         # PostgreSQL container
-        url: jdbc:postgresql://postgres:5432/userDB
-        username: postgres
-        password: user
+        url: jdbc:postgresql://${POSTGRES_DB_SERVER:postgres}:5432/${USER_DB_NAME:userDB}
+        username: ${POSTGRES_DB_USERNAME:postgres}
+        password: ${POSTGRES_DB_PASSWORD:user}
 
     jpa:
         # Create/update tables automatically
@@ -20,7 +20,7 @@ spring:
 
     kafka:
         # Kafka container
-        bootstrap-servers: kafka:9092
+        bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
 
         producer:
             # Kafka message key is Long
@@ -31,7 +31,8 @@ spring:
 
 jwt:
     # JWT secret
-    secretKey: kjlfhbvfskjbgvslkdnvvhsafcdghvcjbfvhgsvc873465tgyfdghvbjkf
+    secretKey: ${JWT_SECRET}
+#    kjlfhbvfskjbgvslkdnvvhsafcdghvcjbfvhgsvc873465tgyfdghvbjkf
 
 
 # point to your kafka folder in my case it is cd C:\kafka.

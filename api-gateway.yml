@@ -43,8 +43,8 @@ spring:
                                 - StripPrefix=2
                                 -   name: AuthenticationFilter
 
-#management:
-#    endpoints:
-#        web:
-#            exposure:
-#                include: "health,info"
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "health,info"

@@ -8,7 +8,7 @@ server:
 spring:
     kafka:
         # IntelliJ service → Docker Kafka
-        bootstrap-servers: kafka:9092
+        bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
 
         consumer:
             # Consumer group name
@@ -27,9 +27,9 @@ spring:
 
     datasource:
         # IntelliJ service → Docker PostgreSQL
-        url: jdbc:postgresql://postgres:5432/notificationDB
-        username: postgres
-        password: user
+        url: jdbc:postgresql://${POSTGRES_DB_SERVER:postgres}:5432/${NOTIFICATION_DB_NAME:notificationDB}
+        username: ${POSTGRES_DB_USERNAME:postgres}
+        password: ${POSTGRES_DB_PASSWORD:user}
 
     jpa:
         # Create/update tables automatically
