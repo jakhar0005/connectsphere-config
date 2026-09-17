@@ -7,7 +7,7 @@ server:
 spring:
     neo4j:
         # Neo4j is exposed from Docker to Windows on port 7688
-        uri: ${NEO4J_URI:neo4j://neo4j:7687}
+        uri: neo4j://${CONNECTION_DB_NAME:neo4j}:7687
 
         # Neo4j username
         authentication:
