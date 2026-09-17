@@ -42,6 +42,8 @@ spring:
                             filters:
                                 - StripPrefix=2
                                 -   name: AuthenticationFilter
+jwt:
+    secretKey: ${JWT_SECRET}
 
 management:
     endpoints:
