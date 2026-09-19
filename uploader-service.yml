@@ -13,4 +13,5 @@ cloudinary:
 
 gcloud:
     # Bucket name is not a secret
-    storage-bucket-name: connectsphere-media-dev
+    storage-bucket-name: ${GCLOUD_STORAGE_BUCKET_NAME}
+    storage-access-key: ${GCLOUD_STORAGE_ACCESS_KEY}
