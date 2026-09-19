@@ -11,8 +11,8 @@ spring:
 
         # Neo4j username
         authentication:
-        username: ${NEO4J_USERNAME:neo4j}
-        password: ${NEO4J_PASSWORD:user@1234}
+            username: ${NEO4J_USERNAME:neo4j}
+            password: ${NEO4J_PASSWORD:user@1234}
 
     kafka:
         # Kafka is running in Docker, but Connection Service runs from IntelliJ
